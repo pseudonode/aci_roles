@@ -1,0 +1,13 @@
+---
+
+- name: Add a new tenant
+  aci_tenant:
+   host: apic1
+   username: "{{ aci_username }}"
+   password: "{{ aci_password }}"
+   validate_certs: no
+   tenant: "{{ item.name }}"
+   description: "{{ item.description }}"
+   state: present
+  with_items: "{{ tenants }}"
+

@@ -1,0 +1,16 @@
+---
+
+- name: Add a new epg
+  aci_epg:
+    host: apic1
+    username: "{{ aci_username }}"
+    password: "{{ password }}"
+    validate_certs: no
+    tenant: "{{ item.tenant }}"
+    ap: "{{ item.ap }}"
+    epg: "{{ item.name }}"
+    description: "{{ item.description }}"
+    bd: "{{ item.bd }}"
+    state: present
+  with_items: "{{ epg }}"
+

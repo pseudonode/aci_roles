@@ -1,0 +1,29 @@
+---
+
+epg:
+  - tenant: CloudTenant
+    ap: CLOUD-APP-1
+    name: WEB-TIER
+    description: Endpoint Group 1
+    bd: WEB-TIER
+    domain: AZ-VMWARE-POC
+    domain_type: vmm
+    vm_provider: vmware
+
+  - tenant: CloudTenant
+    ap: CLOUD-APP-1
+    name: APP-TIER
+    description: Endpoint Group 2
+    bd: APP-TIER
+    domain: AZ-VMWARE-POC
+    domain_type: vmm
+    vm_provider: vmware
+
+  - tenant: CloudTenant
+    ap: CLOUD-APP-1
+    name: DB-TIER
+    description: Endpoint Group 3
+    bd: DB-TIER
+    domain: AZ-VMWARE-POC
+    domain_type: vmm
+    vm_provider: vmware
