@@ -1,7 +1,7 @@
 ---
 - name: Add a new contract for EPG to EPG Communication
   aci_epg_to_contract:
-    host: apic1
+    host: "{{ inventory_hostname }}"
     username: "{{ aci_username }}"
     password: "{{ password }}"
     validate_certs: no
@@ -11,11 +11,11 @@
     contract: "{{ item.name }}"
     contract_type: "{{ item.type }}"
     state: present
-  with_items: "{{ epg_contracts }}"
+  loop: "{{ epg_contracts }}"
 
 - name: Add a new contract for EPG to L3OUT Communication
   aci_epg_to_contract:
-    host: apic1
+    host: "{{ inventory_hostname }}"
     username: "{{ aci_username }}"
     password: "{{ password }}"
     validate_certs: no

@@ -1,0 +1,7 @@
+---
+
+vrfs:
+  - name: VRF1
+    description: This is an Ansible Configured VRF
+    tenant: CBRE
+

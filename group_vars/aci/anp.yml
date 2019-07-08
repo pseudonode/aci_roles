@@ -1,7 +1,7 @@
 ---
 
 anps:
-  - name: "CLOUD-APP-1"
-    description: "Cloud Application 1"
-    tenant: "CloudTenant"
+  - name: "APP-1"
+    description: "Application 1"
+    tenant: "CBRE"
 

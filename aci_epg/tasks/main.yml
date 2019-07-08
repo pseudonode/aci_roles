@@ -2,7 +2,7 @@
 
 - name: Add a new epg
   aci_epg:
-    host: apic1
+    host: "{{ inventory_hostname }}"
     username: "{{ aci_username }}"
     password: "{{ password }}"
     validate_certs: no
@@ -12,5 +12,5 @@
     description: "{{ item.description }}"
     bd: "{{ item.bd }}"
     state: present
-  with_items: "{{ epg }}"
+  loop: "{{ epg }}"
 

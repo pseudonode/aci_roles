@@ -1,12 +1,12 @@
 ---
 - name: associate a bd to an existing l3out
   aci_bd_to_l3out:
-    host: apic1
+    host: "{{ inventory_hostname }}"
     username: "{{ aci_username }}"
     password: "{{ aci_password }}"
     validate_certs: no
     tenant: "{{ item.tenant }}"
     bd: "{{ item.name }}"
     l3out: "{{ item.l3out }}"
-  with_items: "{{ bds }}"
+  loop: "{{ bds }}"
   when: "'WEB-TIER' in item.name"

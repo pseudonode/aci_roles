@@ -1,7 +1,7 @@
 ---
 - name: Add a new ANP to Tenant
   aci_ap:
-   host: apic1
+   host: "{{ inventory_hostname }}"
    username: "{{ aci_username }}"
    password: "{{ aci_password }}"
    validate_certs: no
@@ -9,4 +9,4 @@
    ap: "{{ item.name }}"
    description: "{{ item.description }}"
    state: present
-  with_items: "{{ anps }}"
+  loop: "{{ anps }}"

@@ -1,15 +1,15 @@
 ---
 - name: Add a new domain to EPG binding
   aci_epg_to_domain:
-    host: apic1
+    host: "{{ inventory_hostname }}"
     username: "{{ aci_username }}"
     password: "{{ password }}"
     validate_certs: no
     tenant: "{{ item.tenant }}"
     ap: "{{ item.ap }}"
     epg: "{{ item.name }}"
-    domain: "{{ item.domain }}"
-    domain_type: "{{ item.domain_type }}"
-    vm_provider: "{{ item.vm_provider }}"
+    domain: "{{ item.vmmdomain }}"
+    domain_type: "{{ item.domaintype }}"
+    vm_provider: "{{ item.vmprovider }}"
     state: present
-  with_items: "{{ epg }}"
+  loop: "{{ epg }}"

@@ -1,0 +1,15 @@
+---
+- name: Add a new VRF to a tenant
+  aci_vrf:
+    hostname: "{{ inventory_hostname }}"
+    username: "{{ aci_username }}"
+    password: "{{ aci_password }}"
+    vrf: "{{ item.name }}"
+    tenant: "{{ item.tenant }}"
+    descr: "{{ item.description }}"
+    policy_control_preference: enforced
+    policy_control_direction: ingress
+    state: present
+    validate_certs: no
+  delegate_to: localhost
+  loop: "{{ vrfs }}"

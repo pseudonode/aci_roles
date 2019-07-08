@@ -1,7 +1,7 @@
 ---
 - name: Add a new bd
   aci_bd:
-    host: apic1
+    host: "{{ inventory_hostname }}"
     username: "{{ aci_username }}"
     password: "{{ aci_password }}"
     validate_certs: no
@@ -10,5 +10,5 @@
     description: "{{ item.description }}"
     vrf: "{{ item.vrf }}"
     state: present
-  with_items: "{{ bds }}"
+  loop: "{{ bds }}"
 

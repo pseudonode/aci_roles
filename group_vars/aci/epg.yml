@@ -1,29 +1,29 @@
 ---
 
 epg:
-  - tenant: CloudTenant
-    ap: CLOUD-APP-1
-    name: WEB-TIER
+  - name: WEB-TIER
+    tenant: CBRE
+    ap: APP-1
     description: Endpoint Group 1
     bd: WEB-TIER
-    domain: AZ-VMWARE-POC
-    domain_type: vmm
-    vm_provider: vmware
+    domaintype: vmm
+    vmprovider: vmware
+    vmmdomain: ACI
 
-  - tenant: CloudTenant
-    ap: CLOUD-APP-1
-    name: APP-TIER
+  - name: APP-TIER
+    tenant: CBRE
+    ap: APP-1
     description: Endpoint Group 2
     bd: APP-TIER
-    domain: AZ-VMWARE-POC
-    domain_type: vmm
-    vm_provider: vmware
+    domaintype: vmm
+    vmprovider: vmware
+    vmmdomain: ACI
 
-  - tenant: CloudTenant
-    ap: CLOUD-APP-1
-    name: DB-TIER
+  - name: DB-TIER
+    tenant: CBRE
+    ap: APP-1
     description: Endpoint Group 3
     bd: DB-TIER
-    domain: AZ-VMWARE-POC
-    domain_type: vmm
-    vm_provider: vmware
+    domaintype: vmm
+    vmprovider: vmware
+    vmmdomain: ACI

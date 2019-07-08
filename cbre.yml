@@ -10,10 +10,10 @@
       prompt: "Please introduce ACI password"
   roles:
     - aci_tenant
-    - aci_anp
+    - aci_vrf
     - aci_bd
     - aci_bd_subnet
-    - aci_bd_to_l3out
+    - aci_anp
     - aci_epg
-    - aci_epg_to_domain
     - aci_epg_to_contract
+    - aci_epg_to_domain
